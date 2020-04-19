@@ -1,0 +1,11 @@
+{
+  "name": "pub_quiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Sean Stephenson <Sean.M.Stephenson@espn.com> (http://espn.com/)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fast-csv": "^4.1.3"
+  }
+}
