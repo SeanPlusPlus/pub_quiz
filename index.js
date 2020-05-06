@@ -1,11 +1,14 @@
 const fs = require('fs');
-const csv = require('@fast-csv/parse');
 
-const teams = {};
+// TODO: parse row string data as csv
+// const csv = require('@fast-csv/parse');
 
-// stubbing out file to handle csv parser => json
+const dir = './data/04-18-2020/csv/'
+const files = fs.readdirSync(dir)
 
-fs.readFile('./data/csv/round_1.csv', handleFile);
+files.forEach((f) => {
+  fs.readFile(`./data/04-18-2020/csv/${f}`, handleFile);
+});
 
 function handleFile(err, data) {
   const rows = data.toString().split('\n');
@@ -14,15 +17,14 @@ function handleFile(err, data) {
 }
 
 function handleStr(str) {
-  const rows = csv.parseString(str, { headers: false} )
-    .on('data', handleRow)
+  // TODO: 
+  // const rows = csv.parseString(str, { headers: false} )
+  //   .on('data', handleRow)
 
-  console.log('rows', rows);
-  
+  console.log('str', str);
 }
 
-function handleRow(row) {
-  return row;
-}
-
-
+// TODO:
+// function handleRow(row) {
+//   return row;
+// }
